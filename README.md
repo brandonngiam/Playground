@@ -24,12 +24,12 @@ Command prompt: `pip install plotly` (or `pip3 install plotly` if pip fails)
 
 <br/>
 
-### Step 5 - Edit api-key.txt file
+### Step 5 - Edit sample.api-key.txt and rename it to api-key.txt
 
-Please open api-key.txt (located where you clone the repository to in step 2) and replace the entire first line with your StocksCafe username, and the entire second line with your API key, which can be found on https://stocks.cafe/user/profile
+1) Please rename sample.api-key.txt to api-key.txt (sample.api-key.txt is located where you clone the repository to in Step 2)
+
+2) Replace the entire first line with your StocksCafe username, and the entire second line with your API key, which can be found on https://stocks.cafe/user/profile
 (if your API Key is NULL, please click on the "Renew API Key" link).
-
-Please save changes and close the api-key.txt file.
 
 Note: API keys are available only to Friends of StocksCafe.
 
