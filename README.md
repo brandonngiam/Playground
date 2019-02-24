@@ -1,3 +1,33 @@
+# Quick Start (to run this on the web)
+
+### Step 1 - Run Binder
+
+https://mybinder.org/v2/gh/StocksCafe/Quant/master
+
+Binder allows you to create custom computing environments that can be shared and used by many remote users. It is an non-profit project funded with grants from the Moore Foundation and the Google Cloud Platform.
+
+<br/>
+
+### Step 2 - Change StocksCafe() to StocksCafe(apiUser='YOUR_USERNAME', apiUserKey='YOUR_API_KEY')
+
+For all usages of StocksCafe() in Jupyter Notebook to StocksCafe(apiUser='YOUR_USERNAME', apiUserKey='YOUR_API_KEY').
+
+Reason: When we use call StocksCafe(), we are actually reading api-key.txt file for your username and api key. Since Binder is running on a shared environment, we cannot upload these sensitive credentials there.
+
+To find your API Key, goto https://stocks.cafe/user/profile (if your API Key is NULL, please click on the "Renew API Key" link).
+
+Note: API keys are available only to Friends of StocksCafe.
+
+<br/>
+
+### Step 3 - Have fun!
+
+I recommend to start with this notebook => "[evankoh] Plot Moving Average Chart.ipynb"
+
+Note: The output would be sent to the output folder. Please goto into it and view the corresponding html file. Enjoy!
+
+<br/>
+
 # Quick Start (to install on your local drive)
 
 ### Step 1 - Install Git
