@@ -26,5 +26,9 @@ class StocksCafe(object):
     def getPrices(self, exchange, symbol, lookback): 
         url = f'{self.recentPricesUrl}&exchange={exchange}&symbol={symbol}&{self.getCreds()}&lookback={lookback}'
         r = requests.get(url)
-        array = r.json()['eod_list']
-        return json_normalize(array)
+        json = r.json()
+        if json['result_boolean']:
+            array = json['eod_list']
+            return json_normalize(array)
+        else:
+            raise Exception(json['result'])
