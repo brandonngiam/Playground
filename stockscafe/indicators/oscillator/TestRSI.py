@@ -1,5 +1,5 @@
-import stockscafe.indicators.oscillator.RSI as RSI
-import stockscafe.utils.Ordering as Ordering
+from . import RSI
+from ...utils import Ordering
 import pandas as pd
 import unittest
 

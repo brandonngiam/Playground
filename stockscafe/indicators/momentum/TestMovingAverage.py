@@ -1,5 +1,5 @@
-import stockscafe.indicators.momentum.MovingAverage as MA
-import stockscafe.utils.Ordering as Ordering
+from . import MovingAverage as MA
+from ...utils import Ordering
 import pandas as pd
 import unittest
 

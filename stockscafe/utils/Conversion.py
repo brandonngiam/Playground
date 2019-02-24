@@ -1,5 +1,5 @@
 import pandas as pd
-import stockscafe.utils.Ordering as Ordering
+from . import Ordering
 from datetime import datetime
 
 def shiftTimeFrame(df, lookback):

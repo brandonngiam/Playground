@@ -1,4 +1,4 @@
-import stockscafe.utils.Conversion as Conversion
+from . import Conversion
 
 def byDate(df, ascending):
     # Makes a strong assumption that DataFrame is already sorted.

@@ -2,7 +2,7 @@
 # RSI = 100 - (100 / 1 + RS)
 # RS = AverageGain / AverageLoss
 from typing import List
-import stockscafe.utils.Ordering as Ordering
+from ...utils import Ordering
 
 def compute(df, lookback):
     df = Ordering.byDate(df, True) # Need dates to be ascending order

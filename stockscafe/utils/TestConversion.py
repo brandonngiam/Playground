@@ -1,6 +1,6 @@
 import unittest
 import pandas as pd
-import stockscafe.utils.Conversion as Conversion
+from ..utils import Conversion
 import datetime 
 
 class TestConversion(unittest.TestCase):

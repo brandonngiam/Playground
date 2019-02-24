@@ -1,5 +1,5 @@
 import unittest
-from stockscafe.StocksCafe import StocksCafe
+from .StocksCafe import StocksCafe
 
 class TestStocksCafe(unittest.TestCase):
     def testGetPrices(self):
