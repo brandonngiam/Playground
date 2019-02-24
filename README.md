@@ -39,7 +39,7 @@ Note: API keys are available only to Friends of StocksCafe.
 
 Command prompt: `jupyter notebook`
 
-I recommended to start with [this notebook](https://github.com/StocksCafe/Quant/blob/master/%5Bevankoh%5D%20Plot%20Moving%20Average%20Chart.ipynb)
+I recommend to start with [this notebook](https://github.com/StocksCafe/Quant/blob/master/%5Bevankoh%5D%20Plot%20Moving%20Average%20Chart.ipynb)
 
 <br/>
 
