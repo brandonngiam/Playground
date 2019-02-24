@@ -6,14 +6,19 @@ Git: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
 `Command prompt: git clone https://github.com/StocksCafe/Quant.git`
 
+<br/>
 
 ### Step 1 - Install Jupyter Notebook
 
 https://jupyter.org/install.html
 
+<br/>
+
 ### Step 2 - Install additional required libraries
 
 `Command prompt: pip3 install plotly`
+
+<br/>
 
 ### Step 3 - Create api.key file
 
@@ -24,17 +29,19 @@ Please check [sample.api.key](https://github.com/StocksCafe/Quant/blob/master/sa
 
 Please keep the api.key file in the same directory as sample.api.key
 
+<br/>
+
 ### Step 4 - Have fun!
 
 I recommended to start with [this notebook](https://github.com/StocksCafe/Quant/blob/master/%5Bevankoh%5D%20Plot%20Moving%20Average%20Chart.ipynb)
 
-
+<br/>
 
 # If you are unfamiliar with python
 
 I recommend to read [this tutorial](https://thomas-cokelaer.info/tutorials/python/basics.html)
 
-
+<br/>
 
 # If you are unfamiliar with Jupyter Notebook
 
