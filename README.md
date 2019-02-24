@@ -8,11 +8,11 @@ Binder allows you to create custom computing environments that can be shared and
 
 <br/>
 
-### Step 2 - Change StocksCafe() to StocksCafe(apiUser='YOUR_USERNAME', apiUserKey='YOUR_API_KEY')
+### Step 2 - Change StocksCafe() usage
 
-For all usages of StocksCafe() in Jupyter Notebook to StocksCafe(apiUser='YOUR_USERNAME', apiUserKey='YOUR_API_KEY').
+For all usages of StocksCafe() in Jupyter Notebook, change it to StocksCafe(apiUser='YOUR_USERNAME', apiUserKey='YOUR_API_KEY').
 
-Reason: When we use call StocksCafe(), we are actually reading api-key.txt file for your username and api key. Since Binder is running on a shared environment, we cannot upload these sensitive credentials there.
+Explanation: When we use call StocksCafe(), we are actually reading api-key.txt file for your username and api key. Since Binder is running on a shared environment, we cannot upload these sensitive credentials there.
 
 To find your API Key, goto https://stocks.cafe/user/profile (if your API Key is NULL, please click on the "Renew API Key" link).
 
