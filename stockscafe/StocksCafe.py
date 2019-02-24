@@ -6,10 +6,14 @@ class StocksCafe(object):
     recentPricesUrl = f'{domain}/stock.json?l=recent_prices'
     apiCountUrl = f'{domain}/user.json?l=count'
 
-    def __init__(self, api_key_file='api-key.txt'):
-        f = open(api_key_file, "r") 
-        self.apiUser = f.readline().rstrip() # First line shall be api_user
-        self.apiUserKey = f.readline().rstrip() # Second line shall be api_user_key
+    def __init__(self, api_key_file='api-key.txt', apiUser='', apiUserKey=''):
+        if apiUser != '' or apiUserKey != '':
+            self.apiUser = apiUser
+            self.apiUserKey = apiUserKey
+        else:
+            f = open(api_key_file, "r") 
+            self.apiUser = f.readline().rstrip() # First line shall be api_user
+            self.apiUserKey = f.readline().rstrip() # Second line shall be api_user_key
 
     def getCreds(self):
         return f'api_user={self.apiUser}&api_user_key={self.apiUserKey}'
