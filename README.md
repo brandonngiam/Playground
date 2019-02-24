@@ -1,3 +1,9 @@
+# If you are unfamiliar with Jupyter Notebook
+
+To fully leverage on StocksCafe API and this library, you would need to have some knowledge of Jupyter Notebook. No worries though, it is easy to learn and I highly recommend this easy to follow [lecture by Quantopian](https://www.quantopian.com/lectures/introduction-to-research) to start with.
+
+<br/>
+
 # Quick Start (to run this on the web)
 
 ### Step 1 - Run Binder
@@ -73,15 +79,9 @@ I recommend to start with [this notebook](https://github.com/StocksCafe/Quant/bl
 
 <br/>
 
-# If you are unfamiliar with Jupyter Notebook
-
-I highly recommend this easy to follow [lecture by Quantopian](https://www.quantopian.com/lectures/introduction-to-research)
-
-<br/>
-
 # (Optional) If you want to learn more about python
 
-I recommend to read [this tutorial](https://thomas-cokelaer.info/tutorials/python/basics.html)
+To be effective in using this library, you would need to have some knowledge of Python programming language. No worries though, it is one of the easiest programming language to learn. I recommend to read [this tutorial](https://thomas-cokelaer.info/tutorials/python/basics.html) to start with.
 
 
 
