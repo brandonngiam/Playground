@@ -1,6 +1,6 @@
 # If you are unfamiliar with Jupyter Notebook
 
-To fully leverage on StocksCafe API and this library, you would need to have some knowledge of Jupyter Notebook. No worries though, it is easy to learn and I highly recommend this short and easy to follow [lecture by Quantopian](https://www.quantopian.com/lectures/introduction-to-research) as a start.
+To fully leverage on StocksCafe APIs and this library, you would need to have some knowledge of Jupyter Notebook. No worries though, it is easy to learn and I highly recommend this short and easy to follow [lecture by Quantopian](https://www.quantopian.com/lectures/introduction-to-research) as a start.
 
 <br/>
 
@@ -30,7 +30,7 @@ Note: API keys are available only to Friends of StocksCafe.
 
 ### Step 3 - Have fun!
 
-I recommend to start with this notebook => "[evankoh] Plot Moving Average Chart.ipynb"
+I recommend to start with this notebook => "Plot Moving Average Chart.ipynb"
 
 Note: The output would be sent to the output folder. Please click on it to view the generated html file. Enjoy!
 
@@ -77,7 +77,7 @@ Note: API keys are available only to Friends of StocksCafe.
 
 Command prompt: `jupyter notebook`
 
-I recommend to start with [this notebook](https://github.com/StocksCafe/Playground/blob/master/%5Bevankoh%5D%20Plot%20Moving%20Average%20Chart.ipynb)
+I recommend to start with [this notebook](https://github.com/StocksCafe/Playground/blob/master/Plot%20Moving%20Average%20Chart.ipynb)
 
 <br/>
 
