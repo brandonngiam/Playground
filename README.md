@@ -10,6 +10,8 @@ To fully leverage on StocksCafe API and this library, you would need to have som
 
 https://mybinder.org/v2/gh/StocksCafe/Playground/master
 
+Note: This can take some time (>5 mins) as it is essentially creating a remote computer for you. (Click show build logs if you want to see the progress)
+
 Binder allows you to create custom computing environments that can be shared and used by many remote users. It is a non-profit project funded with grants from the Moore Foundation and the Google Cloud Platform.
 
 <br/>
