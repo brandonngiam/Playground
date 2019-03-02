@@ -8,7 +8,7 @@ To fully leverage on StocksCafe API and this library, you would need to have som
 
 ### Step 1 - Run Binder
 
-https://mybinder.org/v2/gh/StocksCafe/Quant/master
+https://mybinder.org/v2/gh/StocksCafe/Playground/master
 
 Binder allows you to create custom computing environments that can be shared and used by many remote users. It is a non-profit project funded with grants from the Moore Foundation and the Google Cloud Platform.
 
@@ -44,7 +44,7 @@ https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
 ### Step 2 - Clone this repository
 
-Command prompt: `git clone https://github.com/StocksCafe/Quant.git`
+Command prompt: `git clone https://github.com/StocksCafe/Playground.git`
 
 <br/>
 
@@ -75,7 +75,7 @@ Note: API keys are available only to Friends of StocksCafe.
 
 Command prompt: `jupyter notebook`
 
-I recommend to start with [this notebook](https://github.com/StocksCafe/Quant/blob/master/%5Bevankoh%5D%20Plot%20Moving%20Average%20Chart.ipynb)
+I recommend to start with [this notebook](https://github.com/StocksCafe/Playground/blob/master/%5Bevankoh%5D%20Plot%20Moving%20Average%20Chart.ipynb)
 
 <br/>
 
