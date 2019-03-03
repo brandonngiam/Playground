@@ -16,11 +16,11 @@ Binder allows you to create custom computing environments that can be shared and
 
 <br/>
 
-### Step 2 - Change StocksCafe() usage
+### Step 2 - Change StocksCafeApi() usage
 
-Whenever you need to use StocksCafe() in Jupyter Notebook, change it to StocksCafe(apiUser='YOUR_USERNAME', apiUserKey='YOUR_API_KEY').
+Whenever you need to use StocksCafeApi() in Jupyter Notebook, change it to StocksCafeApi(apiUser='YOUR_USERNAME', apiUserKey='YOUR_API_KEY').
 
-Explanation: When we call StocksCafe(), we are reading api-key.txt file for your username and api key. Since Binder is running on a shared environment, we cannot upload these sensitive credentials there.
+Explanation: When we call StocksCafeApi(), we are reading api-key.txt file for your username and api key. Since Binder is running on a shared environment, we cannot upload these sensitive credentials there.
 
 To find your API Key, goto https://stocks.cafe/user/profile (if your API Key is NULL, please click on the "Renew API Key" link).
 
@@ -30,7 +30,7 @@ Note: API keys are available only to Friends of StocksCafe.
 
 ### Step 3 - Have fun!
 
-I recommend to start with this notebook => "Plot Moving Average Chart.ipynb"
+I recommend to start with this notebook (Plot Moving Average Chart.ipynb) under tutorials.
 
 Note: The output would be sent to the output folder. Please click on it to view the generated html file. Enjoy!
 
@@ -77,7 +77,7 @@ Note: API keys are available only to Friends of StocksCafe.
 
 Command prompt: `jupyter notebook`
 
-I recommend to start with [this notebook](https://github.com/StocksCafe/Playground/blob/master/Plot%20Moving%20Average%20Chart.ipynb)
+I recommend to start with [this notebook](https://github.com/StocksCafe/Playground/blob/master/tutorials/Plot%20Moving%20Average%20Chart.ipynb)
 
 <br/>
 
