@@ -1,10 +1,10 @@
 import unittest
-from .StocksCafe import StocksCafe
+from .StocksCafeApi import StocksCafeApi
 
-class TestStocksCafe(unittest.TestCase):
+class TestStocksCafeApi(unittest.TestCase):
     def testGetPrices(self):
         print("TestStocksCafe.testGetPrices")
-        sc = StocksCafe()
+        sc = StocksCafeApi()
         df = sc.getPrices('SGX', 'D05', 5)
         self.assertTrue('change' in df.columns)
         self.assertTrue('high' in df.columns)
@@ -15,8 +15,8 @@ class TestStocksCafe(unittest.TestCase):
         self.assertTrue('volume' in df.columns)
         self.assertTrue(len(df.index) == 5)
 
-    def testApiCount(self):
-        print("TestStocksCafe.testApiCount")
-        sc = StocksCafe()
-        df = sc.getApiCount()
+    def testUsageCount(self):
+        print("TestStocksCafe.testUsageCount")
+        sc = StocksCafeApi()
+        df = sc.getUsageCount()
         self.assertTrue('count' in df.columns)

@@ -1,7 +1,7 @@
 import requests
 from pandas.io.json import json_normalize
 
-class StocksCafe(object):
+class StocksCafeApi(object):
     domain = 'https://api.stocks.cafe'
     recentPricesUrl = f'{domain}/stock.json?l=recent_prices'
     apiCountUrl = f'{domain}/user.json?l=count'
@@ -27,7 +27,7 @@ class StocksCafe(object):
         else:
             raise Exception(json['result'])
 
-    def getApiCount(self):
+    def getUsageCount(self):
         url = f'{self.apiCountUrl}&{self.getCreds()}'
         r = requests.get(url)
         return json_normalize(r.json())
