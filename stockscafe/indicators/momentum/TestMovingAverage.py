@@ -7,6 +7,7 @@ import unittest
 
 class TestMovingAverage(unittest.TestCase):
     def testComputeExponential(self):
+        # https://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:moving_averages
         print("TestMovingAverage.testComputeExponential")
         input = {
             'date': [   '15 Dec 2009', '16 Dec 2009', '17 Dec 2009', '18 Dec 2009', '21 Dec 2009',
