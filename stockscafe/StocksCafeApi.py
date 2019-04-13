@@ -39,6 +39,7 @@ class StocksCafeApi(object):
         url = f'{self.domain}/stock.json?l=recent_prices'
         url += f'&exchange={exchange}&symbol={symbol}'
         url += f'&{self.getCreds()}&lookback={lookback}'
+        url += f'&page={page}'
         return self.getResult(url, 'eod_list')
 
     def getCollectedDividends(self, startDate, endDate):
