@@ -1,3 +1,4 @@
+from datetime import datetime, date, timedelta
 import requests
 from pandas.io.json import json_normalize
 
@@ -35,10 +36,41 @@ class StocksCafeApi(object):
         r = requests.get(url)
         return json_normalize(r.json())
 
+    # Params:
+    # - end_date: a '%Y-%m-%d' string. Default is today.
+    # - start_date: a '%Y-%m-%d' string. Default is 60 days from end_date.
+    # Returned data is capped to 1000 records.
+    def getPricesBetween(self, exchange, symbol,
+                            start_date=None, end_date=None):
+        date_format = '%Y-%m-%d'
+        default_record_count = 60
+        if end_date:
+            end_date = datetime.strptime(end_date, date_format)
+        else:
+            end_date = datetime.now()
+        if start_date:
+            start_date = datetime.strptime(start_date, date_format)
+        else:
+            start_date = end_date - timedelta(days = default_record_count)
+        if end_date < start_date:
+            tmp = start_date
+            start_date = end_date
+            end_date = tmp
+        start_str = start_date.strftime("%Y-%m-%d")
+        end_str = end_date.strftime("%Y-%m-%d")
+
+        url = f'{self.domain}/stock.json?l=prices'
+        url += f'&exchange={exchange}&symbol={symbol}'
+        url += f'&{self.getCreds()}'
+        url += f'&start_date={start_str}'
+        url += f'&end_date={end_str}'
+        return self.getResult(url, 'eod_list')
+
     def getPrices(self, exchange, symbol, lookback, page = 1): 
         url = f'{self.domain}/stock.json?l=recent_prices'
         url += f'&exchange={exchange}&symbol={symbol}'
         url += f'&{self.getCreds()}&lookback={lookback}'
+        url += f'&page={page}'
         return self.getResult(url, 'eod_list')
 
     def getCollectedDividends(self, startDate, endDate):
@@ -49,5 +81,49 @@ class StocksCafeApi(object):
     def getPortfolioTransactions(self, page = 1):
         url = f'{self.domain}/portfolio.json?l=portfolio_transactions'
         url += f'&page={page}'
+        url += f'&{self.getCreds()}'
+        return self.getResult(url, 'data')
+
+    # Params:
+    # - end_date: a '%Y-%m-%d' string. Default is today.
+    # - start_date: a '%Y-%m-%d' string. Default is 60 days from end_date.
+    # Returned data is capped to 1000 records.
+    def getPortfolioTransactionsBetween(self, start_date=None, end_date=None,
+                                        label_id=None):
+        date_format = '%Y-%m-%d'
+        default_record_count = 60
+        if end_date:
+            end_date = datetime.strptime(end_date, date_format)
+        else:
+            end_date = datetime.now()
+        if start_date:
+            start_date = datetime.strptime(start_date, date_format)
+        else:
+            start_date = end_date - timedelta(days = default_record_count)
+        if end_date < start_date:
+            tmp = start_date
+            start_date = end_date
+            end_date = tmp
+        start_str = start_date.strftime("%Y-%m-%d")
+        end_str = end_date.strftime("%Y-%m-%d")
+
+        url = f'{self.domain}/portfolio.json?l=portfolio_transactions_by_date'
+        url += f'&{self.getCreds()}'
+        url += f'&start_date={start_str}'
+        url += f'&end_date={end_str}'
+        url += f'&label_id={label_id}'
+        
+        return self.getResult(url, 'data')
+
+    # Params
+    # - open_only: True means open positions. False means closed positions.
+    # - label_id: ID of portfolio to retrieve. None (default): all portfolios.
+    def getPortfolio(self, label_id=None, open_only = True):
+        if open_only:
+            open_closed = 'current'
+        else:
+            open_closed = 'closed'
+        url = f'{self.domain}/portfolio.json?l={open_closed}'
+        url += f'&label_id={label_id}'
         url += f'&{self.getCreds()}'
         return self.getResult(url, 'data')
