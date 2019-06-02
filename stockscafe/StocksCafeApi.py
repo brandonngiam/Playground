@@ -4,6 +4,7 @@ from pandas.io.json import json_normalize
 
 class StocksCafeApi(object):
     domain = 'https://api.stocks.cafe'
+    __default_lookback_days__ = 60
 
     def __init__(self, api_key_file='api-key.txt', apiUser='', apiUserKey=''):
         if apiUser != '' or apiUserKey != '':
@@ -38,12 +39,11 @@ class StocksCafeApi(object):
 
     # Params:
     # - end_date: a '%Y-%m-%d' string. Default is today.
-    # - start_date: a '%Y-%m-%d' string. Default is 60 days from end_date.
-    # Returned data is capped to 1000 records.
+    # - start_date: a '%Y-%m-%d' string.
+    #               Defaults to __default_lookback_days__ days from end_date.
     def getPricesBetween(self, exchange, symbol,
-                            start_date=None, end_date=None):
+                            start_date = None, end_date = None):
         date_format = '%Y-%m-%d'
-        default_record_count = 60
         if end_date:
             end_date = datetime.strptime(end_date, date_format)
         else:
@@ -51,7 +51,8 @@ class StocksCafeApi(object):
         if start_date:
             start_date = datetime.strptime(start_date, date_format)
         else:
-            start_date = end_date - timedelta(days = default_record_count)
+            start_date = end_date - timedelta(
+                                        days = self.__default_lookback_days__)
         if end_date < start_date:
             tmp = start_date
             start_date = end_date
@@ -86,12 +87,12 @@ class StocksCafeApi(object):
 
     # Params:
     # - end_date: a '%Y-%m-%d' string. Default is today.
-    # - start_date: a '%Y-%m-%d' string. Default is 60 days from end_date.
+    # - start_date: a '%Y-%m-%d' string.
+    #               Defaults to __default_lookback_days__ days from end_date.
     # Returned data is capped to 1000 records.
-    def getPortfolioTransactionsBetween(self, start_date=None, end_date=None,
-                                        label_id=None):
+    def getPortfolioTransactionsBetween(self, start_date = None,
+                                        end_date = None, label_id = None):
         date_format = '%Y-%m-%d'
-        default_record_count = 60
         if end_date:
             end_date = datetime.strptime(end_date, date_format)
         else:
@@ -99,7 +100,8 @@ class StocksCafeApi(object):
         if start_date:
             start_date = datetime.strptime(start_date, date_format)
         else:
-            start_date = end_date - timedelta(days = default_record_count)
+            start_date = end_date - timedelta(
+                                    days = self.__default_lookback_days__)
         if end_date < start_date:
             tmp = start_date
             start_date = end_date
@@ -118,7 +120,7 @@ class StocksCafeApi(object):
     # Params
     # - open_only: True means open positions. False means closed positions.
     # - label_id: ID of portfolio to retrieve. None (default): all portfolios.
-    def getPortfolio(self, label_id=None, open_only = True):
+    def getPortfolio(self, label_id = None, open_only = True):
         if open_only:
             open_closed = 'current'
         else:
