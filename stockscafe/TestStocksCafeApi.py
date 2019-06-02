@@ -58,7 +58,7 @@ class TestStocksCafeApi(unittest.TestCase):
         df = sc.getPricesBetween(exchange, symbol,
                                     start_date=start_date, end_date=end_date
                                 )['eod_list']
-        df['date_obj'] = pd.to_datetime(df['date'], format='%d %b %Y')
+        df['date_obj'] = pd.to_datetime(df['date'], format='%Y-%m-%d')
         assert(start_date == df['date_obj'].min().strftime('%Y-%m-%d'))
         assert(end_date == df['date_obj'].max().strftime('%Y-%m-%d'))
         for expected_column in expected_columns:
@@ -79,7 +79,7 @@ class TestStocksCafeApi(unittest.TestCase):
         sc = StocksCafeApi()
         df = sc.getPortfolioTransactionsBetween(start_date = start_date,
                                     end_date = end_date, label_id=None)['data']
-        df['date_obj'] = pd.to_datetime(df['date'], format='%d %b %Y')
+        df['date_obj'] = pd.to_datetime(df['date'], format='%Y-%m-%d')
         assert(start_date_obj <= df['date_obj'].min())
         assert(end_date_obj >= df['date_obj'].max())
         for expected_column in expected_columns:
