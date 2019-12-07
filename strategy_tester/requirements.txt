@@ -1,0 +1,4 @@
+backtrader
+backtrader_plotting
+pandas
+diskcache
